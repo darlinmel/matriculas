@@ -1,0 +1,206 @@
+
+      .chartMenu {
+        width: 100vw;
+        height: 0px;
+        background: #1A1A1A;
+        color: rgb(69, 89, 103);
+      }
+      .chartMenu p {
+        padding: 10px;
+        font-size: 20px;
+      }
+      .chartCard {
+        /*width: 100vw;*/
+        height: calc(100vh - 40px);
+         /*background-image: url('data:image/jpeg;base64,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');*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .chartBox {
+        position: absolute;
+        width: 890px;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 3px #000000;
+        background: whmatricula_educacion_basicae;
+        left: 30%;
+        height: 500px;
+        top:30%;
+        
+      }
+      .row {
+        display: flex;
+        height: 100vh;
+      }
+      .sidebar {
+       
+        flex: 25%;
+        background: rgb(255, 255, 255);
+        padding: 20px;
+        background-image: url('https://observatorio.tec.mx/wp-content/uploads/2022/05/salo%CC%81nlleno.jpeg');
+  background-repeat: repeat;
+  height: 530px;
+      }
+      .column{
+        flex: 75%;
+      }
+      .button {
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    
+    .button:hover {
+        background-color: #c0d2ce; /* Green */
+        color: white;
+    }
+    .button2 {
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    
+    .button2:hover {
+        background-color: #c0d2ce; /* Green */
+        color: white;
+    }
+    ul {
+      list-style: none;
+      margin: -8px;
+      padding: 8px;
+      background-color: #fefefe;
+      overflow: hidden;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+  
+    li {
+      float: left;
+    }
+  
+    li a {
+      display: block;
+      color: rgb(33, 78, 19);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+  
+    li a:hover {
+      background-color: #b9c2b9;
+    }
+    footer {
+      background-color: #6b6767;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    footer p {
+      margin: 0;
+    }
+     /*diseño de los cards*/
+     .card-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			max-width: 1200px;
+		
+			padding: 20px;
+		}
+
+		.card {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			width: 250px;
+			margin-bottom: 20px;
+			text-align: center;
+			font-family: arial;
+			background-color: #f5f5f5;
+			padding: 20px;
+		}
+		
+		.card img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.card h2 {
+			font-size: 24px;
+			color: #333;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		
+		.card p {
+			font-size: 16px;
+			color: #666;
+			line-height: 1.5;
+			margin-bottom: 10px;
+		}
+		
+		.card button {
+			border: none;
+			outline: 0;
+			padding: 10px 20px;
+			background-color: #333;
+			color: #fff;
+			font-size: 18px;
+			cursor: pointer;
+			border-radius: 5px;
+		}
+		
+		.card button:hover {
+			background-color: #555;
+		}
+    .iconos{
+      background-color: #3b613f;
+    }
+    .fuenteic{
+      color: aliceblue;
+    }
+    .top-bar {
+      background-color: #1a3b15;
+      color: #fff;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    
+	.buttoncard {
+		display: inline-block;
+		padding: 8px 16px;
+		font-size: 16px;
+		font-weight: bold;
+		text-align: center;
+		text-decoration: none;
+		background-color: #4CAF50;
+		color: white;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+  .card{
+    position:relative;
+    left: 20%;
+    max-width: 900px;
+    margin: 0 auto; /* Esto centra la card horizontalmente */
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 20px;
+    top: -90px;
+   
+  }

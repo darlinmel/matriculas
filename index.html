@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, inmatricula_educacion_basicaial-scale=1">
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Acerca de</a></li>
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+    
+    <script>
+      // Agrega un efecto de desplazamiento suave al hacer clic en los enlaces de la barra de navegación
+      $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if( target.length ) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top
+            }, 1000);
+        }
+      });
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      
+      
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="logo">
+        <img src="https://openlab.ec/sites/default/files/inline-images/logo_v_2.png">
+        <h1>Fundacion OpenLab</h1>
+      </div>
+    </div>
+    <div class="chartMenu">
+      <p>  </p>
+      </div>
+      <div class="row">
+    
+        <div class="sidebar">
+          
+        <div class="iconos">
+               
+                <div class="button"><a href="index2.html" class="fuenteic">FISCOMISIONALES</a></div>
+                <div class="button2"><a href="index3.html" class="fuenteic">PARTICULARES</a></div>
+                <div class="button2"><a href="index1.html" class="fuenteic">GENERAL</a></div>
+              </div>
+                <select onchange="updateChart(this)">
+                <option value="matricula_educacion_inicial_alumnos_de_0_a_36_meses">Matriculas Educacion Inicial (Alumnos de 0 a 36 meses)</option>
+                <option value="pencion_educacion_inicial_alumnos_de_0_a_36_meses">Pension Educacion Inicial (Alumnos de 0 a 36 meses)</option>
+                <option value="matriculas_educacion_inicial">Matricula Educacion Inicial</option>
+                <option value="pencion_eduacacion_inicial">Pension Educacion Inicial</option>
+                <option value="pencion_educacion_basica">Pension Educacion Basica</option>
+                <option value="matricula_educacion_basica_superior">Matricula Educacion Basica Superior</option>
+                <option value="pencion_educacion_superior">Pension Educacion Basica Superior</option>
+                <option value="matricula_bachillerato">Matricula Bachillerato</option>
+                <option value="pencion_bachillerato">Pension Bachillerato</option>
+               
+            </select>
+        </div>
+        <div class="column">
+            <div class="chartCard">
+              
+                <div class="chartBox">
+                  
+                  <canvas id="myChart"></canvas>
+                </div>
+              </div>
+        </div>
+      </div>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+    <script>
+   const values = [
+    {
+        nom: '01d01', financials: { matricula_educacion_inicial_alumnos_de_0_a_36_meses:40.84, pencion_educacion_inicial_alumnos_de_0_a_36_meses:350.56, matriculas_educacion_inicial: 234.46, pencion_eduacacion_inicial:235.756, matricula_educacion_basica: 674.45, pencion_educacion_basica:324.32,matricula_educacion_basica_superior: 325.54, pencion_educacion_superior: 425.56, matricula_bachillerato:426.67, pencion_bachillerato: 234.67}
+    },
+    {
+        nom: '04d01', financials: { matricula_educacion_inicial_alumnos_de_0_a_36_meses:507.35, pencion_educacion_inicial_alumnos_de_0_a_36_meses:788.97, matriculas_educacion_inicial:789.76, pencion_eduacacion_inicial:370.98, matricula_educacion_basica:233.87, pencion_educacion_basica:357.87,matricula_educacion_basica_superior: 345.98, pencion_educacion_superior: 765.78, matricula_bachillerato:754.75, pencion_bachillerato: 565.78}
+    },
+    {
+        nom: '01d02', financials: { matricula_educacion_inicial_alumnos_de_0_a_36_meses:406.54, pencion_educacion_inicial_alumnos_de_0_a_36_meses:486.98, matriculas_educacion_inicial: 356.86, pencion_eduacacion_inicial:750.43, matricula_educacion_basica:235.58, pencion_educacion_basica:350.65,matricula_educacion_basica_superior: 456.56, pencion_educacion_superior:342.87, matricula_bachillerato:834.78, pencion_bachillerato: 345.34}
+    },
+    {
+
+        nom: '10d03', financials: { matricula_educacion_inicial_alumnos_de_0_a_36_meses:254.73, pencion_educacion_inicial_alumnos_de_0_a_36_meses:690.87, matriculas_educacion_inicial: 200.75, pencion_eduacacion_inicial:837.88, matricula_educacion_basica:234.68, pencion_educacion_basica:235.45,matricula_educacion_basica_superior: 354.34, pencion_educacion_superior: 678.56, matricula_bachillerato:524.67, pencion_bachillerato: 346.89}
+    },
+    {
+
+        nom: '17d03', financials: { matricula_educacion_inicial_alumnos_de_0_a_36_meses:746.54, pencion_educacion_inicial_alumnos_de_0_a_36_meses:908.89, matriculas_educacion_inicial: 534.56, pencion_eduacacion_inicial:350.45, matricula_educacion_basica:200.24, pencion_educacion_basica:353.45,matricula_educacion_basica_superior: 564.45, pencion_educacion_superior: 568.67, matricula_bachillerato:564.43, pencion_bachillerato: 567.56}
+    },
+    {
+
+        nom: '18d01', financials: { matricula_educacion_inicial_alumnos_de_0_a_36_meses:706.54, pencion_educacion_inicial_alumnos_de_0_a_36_meses:320.86, matriculas_educacion_inicial: 235.67, pencion_eduacacion_inicial:350.12, matricula_educacion_basica:568.86, pencion_educacion_basica:289.73, matricula_educacion_basica_superior: 236.97,pencion_educacion_superior: 700.21, matricula_bachillerato:763.98, pencion_bachillerato: 456.76}
+    },
+    {
+
+        nom: '21d01', financials: { matricula_educacion_inicial_alumnos_de_0_a_36_meses:254.73, pencion_educacion_inicial_alumnos_de_0_a_36_meses:690.97, matriculas_educacion_inicial: 200.75, pencion_eduacacion_inicial:887.68, matricula_educacion_basica:234.68, pencion_educacion_basica:235.45,matricula_educacion_basica_superior: 354.34, pencion_educacion_superior: 678.56, matricula_bachillerato:424.67, pencion_bachillerato: 346.89}
+    },
+    {
+
+        nom: '21d02', financials: { matricula_educacion_inicial_alumnos_de_0_a_36_meses:40.84, pencion_educacion_inicial_alumnos_de_0_a_36_meses:359.90, matriculas_educacion_inicial: 234.46, pencion_eduacacion_inicial:235.56, matricula_educacion_basica: 674.45, pencion_educacion_basica:324.132,matricula_educacion_basica_superior: 325.64, pencion_educacion_superior: 425.56, matricula_bachillerato:626.67, pencion_bachillerato: 234.67}
+    },
+    {
+
+        nom: '21d03', financials: { matricula_educacion_inicial_alumnos_de_0_a_36_meses:846.54, pencion_educacion_inicial_alumnos_de_0_a_36_meses:908.897, matriculas_educacion_inicial: 834.56, pencion_eduacacion_inicial:350.45, matricula_educacion_basica:200.34, pencion_educacion_basica:353.45,matricula_educacion_basica_superior: 564.45, pencion_educacion_superior: 568.67, matricula_bachillerato:564.43, pencion_bachillerato: 567.76}
+    },
+    ]
+
+    const data = {
+        /*labels: ['matricula_educacion_inicial_alumnos_de_0_a_36_meses',
+        'pencion_educacion_inicial_alumnos_de_0_a_36_meses',
+        'matriculas_educacion_inicial',
+        'pencion_eduacacion_inicial','matricula_educacion_basica','pencion_educacion_basica','matricula_educacion_basica_superior','pencion_educacion_superior','matricula_bachillerato','pencion_bachillerato'],*/
+      datasets: [{
+        label: '"COSTOS DE MATRÍCULAS Y PENSIONES INSTUCIONES EDUCATIVAS PARTICULARES Y FISCOMISIONALES AÑO LECTIVO 2021-2022"',
+        data: values,     
+        backgroundColor: [
+        'rgba(255, 26, 104, 0.5)',
+        'rgba(54, 162, 235, 0.5)',
+        'rgba(255, 206, 86, 0.5)',
+        'rgba(75, 192, 192, 0.5)',
+        'rgba(153, 102, 255, 0.5)',
+        'rgba(255, 159, 64, 0.5)',
+        'rgba(155, 26, 104, 0.5)',
+        'rgba(54, 162, 235, 0.5)',     
+        'rgba(255, 26, 104, 0.5)',
+        'rgba(0, 0, 0, 0.5)'
+          
+        ],
+        borderColor: [
+        'rgba(255, 26, 104, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(155, 26, 104, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 26, 104, 1)',
+        'rgba(0, 0, 0, 1)'
+
+        ],
+        
+        borderWidth: 2,
+        parsing:{
+            xAxisKey: 'nom',
+            yAxisKey: 'financials.matricula_educacion_inicial_alumnos_de_0_a_36_meses'
+        }
+        
+      }]
+    };
+    // config 
+    const config = {
+      type: 'bar',
+      data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+    function updateChart(option){
+        console.log(option.value);
+        myChart.data.datasets[0].parsing.yAxisKey = `financials.${option.value}`;
+    myChart.update();
+    }
+
+    </script>
+
+<script src="main.js">
+  
+</script>
+<div class="card-container">
+  <div class="card">
+    <p>Para ver la matriz costos de las regiones de Ecuador, visite el sitio web del </p>
+    <a href="https://educacion.gob.ec/wp-content/uploads/downloads/2021/08/Matriz-Costos_Sierra-Amazonia-2021-2022.pdf" class="buttoncard">Ver</a>
+  </div>
+  
+  
+</div>
+<footer>
+  <div class="container">
+    <p>OpenLab © 2023 </p>
+  </div>
+</footer>
+  </body>
+</html>
